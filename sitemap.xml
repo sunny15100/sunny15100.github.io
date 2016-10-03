@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/10/03/hello-world/</loc>
+    
+    <lastmod>2016-10-03T13:03:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2016-10-03T12:59:43.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2016-10-03T12:56:28.000Z</lastmod>
@@ -9,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2016/09/21/hello-my-honey-jiaojiao/</loc>
+    <loc>http://yoursite.com/2016/09/21/myFirstHexoBlog/</loc>
     
     <lastmod>2016-10-03T12:47:59.000Z</lastmod>
     
@@ -19,20 +33,6 @@
     <loc>http://yoursite.com/about/index.html</loc>
     
     <lastmod>2016-10-03T12:42:28.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2016-10-03T12:28:15.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/10/03/hello-world/</loc>
-    
-    <lastmod>2016-10-03T11:26:21.000Z</lastmod>
     
   </url>
   
