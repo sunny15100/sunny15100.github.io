@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-03T13:29:39.000Z</updated>
+  <updated>2016-10-03T13:36:39.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,18 +20,20 @@
     <link href="http://yoursite.com/2016/10/03/myFirstHexoBlog/"/>
     <id>http://yoursite.com/2016/10/03/myFirstHexoBlog/</id>
     <published>2016-10-03T03:06:57.000Z</published>
-    <updated>2016-10-03T13:29:39.000Z</updated>
+    <updated>2016-10-03T13:36:39.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="关于浏览器缓存的那些事儿"><a href="#关于浏览器缓存的那些事儿" class="headerlink" title="关于浏览器缓存的那些事儿"></a>关于浏览器缓存的那些事儿</h2><a id="more"></a>
-<h2 id="header中与浏览器缓存的4个头部"><a href="#header中与浏览器缓存的4个头部" class="headerlink" title="header中与浏览器缓存的4个头部"></a>header中与浏览器缓存的4个头部</h2><h3 id="一、cache-control"><a href="#一、cache-control" class="headerlink" title="一、cache-control"></a>一、cache-control</h3><h4 id="private"><a href="#private" class="headerlink" title="private"></a>private</h4><p>通常只为单个用户缓存，因此，不允许任何中继缓存对其进行缓存，例如用户浏览器可以缓存包含用户私人信息的HTML网页，但是CDN不能缓存。</p>
-<h4 id="public"><a href="#public" class="headerlink" title="public"></a>public</h4><p>可以为多用户间共享缓存，没有设定public和private，默认是public。</p>
-<h4 id="no-store"><a href="#no-store" class="headerlink" title="no-store"></a>no-store</h4><p>禁止缓存，每次请求的资源都要从服务器端重新获取。</p>
-<h4 id="no-cache"><a href="#no-cache" class="headerlink" title="no-cache"></a>no-cache</h4><p><code>响应头返回no-chche</code>并不代表浏览器不缓存资源，只是需要每次在请求资源时向服务器确认资源是否被更改过。为了更保险，需要设置cache-control：private， no-cache， max-age=0。<br><code>请求头中若返回no-cache</code>，则表明服务器端需要重新返回最新的资源。</p>
-<h4 id="max-age"><a href="#max-age" class="headerlink" title="max-age"></a>max-age</h4><p>单位是<code>s</code>，用来指定缓存最大的有效时间，是一个相对于<code>相对时间</code>，相对于谁呢？headers中有一个Last-Modified参数，后面会提到。</p>
-<h4 id="s-maxage"><a href="#s-maxage" class="headerlink" title="s-maxage"></a>s-maxage</h4><p>单位是<code>s</code>，只用于共享缓存，例如CDN缓存。</p>
-<h3 id="二、Expires"><a href="#二、Expires" class="headerlink" title="二、Expires"></a>二、Expires</h3><p>缓存过期时间不是相对时间，而是一个时间点,<code>绝对时间</code>。<br><code>cache-control&gt;expires(同时存在时的优先级)</code></p>
-<h2 id="怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。"><a href="#怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。" class="headerlink" title="怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。"></a>怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。</h2><h3 id="三、利用Last-Modified和Last-Modified-Since报头"><a href="#三、利用Last-Modified和Last-Modified-Since报头" class="headerlink" title="三、利用Last-Modified和Last-Modified-Since报头"></a>三、利用Last-Modified和Last-Modified-Since报头</h3><p><code>Last-Modified响应头</code>指服务器端文件的最后修改时间，当浏览器再次请求该资源时，会向服务器端传送<code>Last-Modified-Since请求报头</code>，询问服务器端是否在这个时间点后改变过该资源。如果没有修改，返回<code>304</code>，告诉浏览器可以使用本地缓存。否则返回浏览器最新资源，状态码为<code>200</code>。</p>
-<h3 id="四、使用ETag验证缓存"><a href="#四、使用ETag验证缓存" class="headerlink" title="四、使用ETag验证缓存"></a>四、使用ETag验证缓存</h3><p><code>ETag响应头</code>是由服务器端返回的一个随机令牌，通常是文件内容的哈希值或者其他的指纹码,只要文件内容改变了，该随机码就会改变。客户端在验证资源是否改变时，只需要在下一个请求中利用<code>if-none-match请求头</code>将其发送给服务端，服务器端根据服务器端的该资源再生成一次随机码，与客户端传来的随机码进行比对，若一致，说明资源未被更改，我们就可以跳过下载，返回<code>304</code>，直接利用本地缓存资源，否则由服务器返回最新的资源。<br> <img src="https://raw.githubusercontent.com/sunny15100/myPictures/master/ETag.PNG" alt="ETag"><br>使用ETag可以解决利用Last-Modified存在的一些问题</p>
+    <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="header中与浏览器缓存的4个头部"><a href="#header中与浏览器缓存的4个头部" class="headerlink" title="header中与浏览器缓存的4个头部"></a>header中与浏览器缓存的4个头部</h2><h2 id="一、cache-control"><a href="#一、cache-control" class="headerlink" title="一、cache-control"></a>一、cache-control</h2><ol>
+<li>private<br>通常只为单个用户缓存，因此，不允许任何中继缓存对其进行缓存，例如用户浏览器可以缓存包含用户私人信息的HTML网页，但是CDN不能缓存。</li>
+<li>public<br>可以为多用户间共享缓存，没有设定public和private，默认是public。</li>
+<li>no-store<br>禁止缓存，每次请求的资源都要从服务器端重新获取。</li>
+<li>no-cache<br><code>响应头返回no-chche</code>并不代表浏览器不缓存资源，只是需要每次在请求资源时向服务器确认资源是否被更改过。为了更保险，需要设置cache-control：private， no-cache， max-age=0。<br><code>请求头中若返回no-cache</code>，则表明服务器端需要重新返回最新的资源。</li>
+<li>max-age<br>单位是<code>s</code>，用来指定缓存最大的有效时间，是一个相对于<code>相对时间</code>，相对于谁呢？headers中有一个Last-Modified参数，后面会提到。</li>
+<li>s-maxage<br>单位是<code>s</code>，只用于共享缓存，例如CDN缓存。</li>
+</ol>
+<h2 id="二、Expires"><a href="#二、Expires" class="headerlink" title="二、Expires"></a>二、Expires</h2><p>缓存过期时间不是相对时间，而是一个时间点,<code>绝对时间</code>。<br><code>cache-control&gt;expires(同时存在时的优先级)</code></p>
+<h2 id="怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。"><a href="#怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。" class="headerlink" title="怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。"></a>怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。</h2><h2 id="三、利用Last-Modified和Last-Modified-Since报头"><a href="#三、利用Last-Modified和Last-Modified-Since报头" class="headerlink" title="三、利用Last-Modified和Last-Modified-Since报头"></a>三、利用Last-Modified和Last-Modified-Since报头</h2><p><code>Last-Modified响应头</code>指服务器端文件的最后修改时间，当浏览器再次请求该资源时，会向服务器端传送<code>Last-Modified-Since请求报头</code>，询问服务器端是否在这个时间点后改变过该资源。如果没有修改，返回<code>304</code>，告诉浏览器可以使用本地缓存。否则返回浏览器最新资源，状态码为<code>200</code>。</p>
+<h2 id="四、使用ETag验证缓存"><a href="#四、使用ETag验证缓存" class="headerlink" title="四、使用ETag验证缓存"></a>四、使用ETag验证缓存</h2><p><code>ETag响应头</code>是由服务器端返回的一个随机令牌，通常是文件内容的哈希值或者其他的指纹码,只要文件内容改变了，该随机码就会改变。客户端在验证资源是否改变时，只需要在下一个请求中利用<code>if-none-match请求头</code>将其发送给服务端，服务器端根据服务器端的该资源再生成一次随机码，与客户端传来的随机码进行比对，若一致，说明资源未被更改，我们就可以跳过下载，返回<code>304</code>，直接利用本地缓存资源，否则由服务器返回最新的资源。<br> <img src="https://raw.githubusercontent.com/sunny15100/myPictures/master/ETag.PNG" alt="ETag"><br>使用ETag可以解决利用Last-Modified存在的一些问题</p>
 <ul>
 <li>某些服务器不能得到资源的最后修改时间，这样就无法判断资源是否得到了更新。</li>
 <li>Last-Modified只能精确到s，无法应对超频繁更新的资源。</li>
@@ -48,7 +50,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;关于浏览器缓存的那些事儿&quot;&gt;&lt;a href=&quot;#关于浏览器缓存的那些事儿&quot; class=&quot;headerlink&quot; title=&quot;关于浏览器缓存的那些事儿&quot;&gt;&lt;/a&gt;关于浏览器缓存的那些事儿&lt;/h2&gt;
+      &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;header中与浏览器缓存的4个头部&quot;&gt;&lt;a href=&quot;#header中与浏览器缓存的4个头部&quot; class=&quot;headerlink&quot; title=&quot;header中与浏览器缓存的4个头部&quot;&gt;&lt;/a&gt;header中与浏览器缓存的
     
     </summary>
     
