@@ -1,28 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>前端小站</title>
-  
-  <link href="/atom.xml" rel="self"/>
-  
-  <link href="http://yoursite.com/"/>
-  <updated>2016-10-03T13:27:59.000Z</updated>
-  <id>http://yoursite.com/</id>
-  
-  <author>
-    <name>sunny</name>
-    
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>关于浏览器缓存的那些事儿</title>
-    <link href="http://yoursite.com/2016/10/03/myFirstHexoBlog/"/>
-    <id>http://yoursite.com/2016/10/03/myFirstHexoBlog/</id>
-    <published>2016-10-03T03:06:57.000Z</published>
-    <updated>2016-10-03T13:27:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>##关于浏览器缓存的那些事儿<br><a id="more"></a></p>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="sunny"><meta name="description" content="##关于浏览器缓存的那些事儿"><meta name="keywords" content="性能优化"><title>关于浏览器缓存的那些事儿 · 前端小站</title><link rel="icon" href="/favicon.ico"><link rel="canonical" href="http://yoursite.com/2016/10/03/myFirstHexoBlog/"><link rel="alternate" href="/atom.xml" title="前端小站"><link rel="stylesheet" href="/fonts/iconfont/iconfont.css"><link rel="stylesheet" href="/css/style.css"><script type="text/javascript">var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?Your baidu Analytics ID";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script type="text/javascript">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'Your Google Analytics ID', 'auto');
+ga('send', 'pageview');</script></head><body><div id="main"><header><a href="/." class="logo">前端小站</a><ul class="nav"><li class="nav-link"><a href="/" target="_self">Home</a></li><li class="nav-link"><a href="/archives/" target="_self">Archives</a></li><li class="nav-link"><a href="/categories/" target="_self">Categories</a></li><li class="nav-link"><a href="/tags/" target="_self">Tags</a></li><li class="nav-link"><a href="/about/" target="_self">About</a></li></ul></header><section id="container"><article class="post"><h1 class="post-title">关于浏览器缓存的那些事儿</h1><span class="post-time">Oct 3, 2016</span><div id="sidebar" class="post-sidebar"><h3 class="heading">Contents</h3><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。"><span class="toc-text">怎么验证服务器资源是否改变了呢？下面介绍与其相关的两个头部。</span></a></li></ol></div><div class="post-content"><p>##关于浏览器缓存的那些事儿<br><a id="more"></a></p>
 <p>##header中与浏览器缓存的4个头部</p>
 <p>###一、cache-control</p>
 <p>####private<br>通常只为单个用户缓存，因此，不允许任何中继缓存对其进行缓存，例如用户浏览器可以缓存包含用户私人信息的HTML网页，但是CDN不能缓存。</p>
@@ -47,17 +36,16 @@
 </ol>
 <hr>
 <p>ps:刚开始学浏览器缓存，希望读此笔记的前辈发现问题后给我指正，谢谢！<br>参考：<br><a href="http://www.alloyteam.com/2016/03/discussion-on-web-caching/" target="_blank" rel="external">http://www.alloyteam.com/2016/03/discussion-on-web-caching/</a><br><a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn)" target="_blank" rel="external">https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn)</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;##关于浏览器缓存的那些事儿&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="性能优化" scheme="http://yoursite.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-</feed>
+</div></article><div class="tags"><a href="/tags/性能优化/">性能优化</a></div><div class="paginator"></div><section id="comments"><div id="disqus_thread"></div></section><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://yoursite.com/2016/10/03/myFirstHexoBlog/';
+    this.page.identifier = '2016/10/03/myFirstHexoBlog/';
+    this.page.title = '关于浏览器缓存的那些事儿';
+};
+(function() {
+var d = document, s = d.createElement('script');
+
+s.src = '//Your disqus ID.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();</script></section><footer><div class="copyright"><p class="power">Powered by <a href="https://hexo.io/">Hexo</a> and Theme by <a href="https://github.com/ahonn/hexo-theme-even"> Even</a></p><p class="since">&copy;2016<span class="heart"><i class="iconfont icon-heart"></i></span><span class="author">sunny</span></p></div><label id="back2top"><i class="iconfont icon-up"></i></label></footer></div><script src="/js/zepto.min.js"></script><script src="/js/theme.js"></script></body></html>
