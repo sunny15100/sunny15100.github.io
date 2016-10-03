@@ -42,4 +42,27 @@
     
   </entry>
   
+  <entry>
+    <title>hello my honey jiaojiao</title>
+    <link href="http://yoursite.com/2016/09/21/hello-my-honey-jiaojiao/"/>
+    <id>http://yoursite.com/2016/09/21/hello-my-honey-jiaojiao/</id>
+    <published>2016-09-21T03:06:57.000Z</published>
+    <updated>2016-10-03T12:47:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>正式加入博客，wlcome<br><a id="more"></a><br><img src="/imgs/timg.jpg" alt="龙猫"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;正式加入博客，wlcome&lt;br&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="leetcode" scheme="http://yoursite.com/tags/leetcode/"/>
+    
+  </entry>
+  
 </feed>
